@@ -1,5 +1,13 @@
 # Guestbook App
 
+Simple retro guestbook app.
+
+## Development
+
+```shell
+npm run dev
+```
+
 ## Caddy configuration
 
 ```caddy
