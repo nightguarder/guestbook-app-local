@@ -21,6 +21,19 @@ example.com {
 
 ## Database tables
 
+### postgres
+
+```sql
+CREATE TABLE messages (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    timestamp TIMESTAMP DEFAULT current_timestamp
+);
+```
+
+### mysql
+
 ```sql
 CREATE TABLE messages (
     id INT AUTO_INCREMENT PRIMARY KEY,

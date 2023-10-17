@@ -1,0 +1,42 @@
+body {
+    background-color: #000;
+    color: #0f0;
+    font-family: 'Courier New', monospace;
+}
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #f00;
+}
+
+form, ul {
+    margin-bottom: 40px;
+}
+
+input[type="text"], textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border: 1px solid #0f0;
+    background-color: #000;
+    color: #0f0;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    background-color: #f00;
+    color: #fff;
+    cursor: pointer;
+}
+
+li {
+    margin-bottom: 10px;
+}
