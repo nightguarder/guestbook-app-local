@@ -19,38 +19,10 @@ Create a new server with a provider such as:
 - etc.
 
 What do we need to install?
+- Git (to clone the repository)
+- Node.js (runtime)
 - Caddy (web server with automatic TLS)
-- Node.js (JavaScript runtime)
-- Git
 
-
-### Caddy
-
-https://caddyserver.com/
-
-#### Install
-
-- https://caddyserver.com/docs/install#debian-ubuntu-raspbian
-
-#### Configure
-
-Edit `/etc/caddy/Caddyfile`:
-
-```caddy
-example.com {
-    tls email@example.com
-
-    reverse_proxy localhost:3000
-}
-```
-
-__Note:__ Replace `example.com` with your actual domain name and `email@example.com` with your email address. Your email address will be used as a contact for the certificate provider, Let's Encrypt (https://letsencrypt.org/).
-
-Don't forget to restart Caddy after editing the config file:
-
-```shell
-systemctl restart caddy
-```
 ### Node.js
 
 Use NodeSource to install Node.js.
@@ -91,6 +63,38 @@ npm run pm2:save
 ```
 
 More information: https://pm2.keymetrics.io/docs/usage/startup/
+
+### Caddy
+
+https://caddyserver.com/
+
+#### Install
+
+- https://caddyserver.com/docs/install#debian-ubuntu-raspbian
+
+#### Configure
+
+Edit `/etc/caddy/Caddyfile`:
+
+```caddy
+example.com {
+    tls email@example.com
+
+    reverse_proxy localhost:3000
+}
+```
+
+To check for errors you can use `caddy validate` command.
+
+__Note:__ Replace `example.com` with your actual domain name and `email@example.com` with your email address. Your email address will be used as a contact for the certificate provider, Let's Encrypt (https://letsencrypt.org/).
+
+Don't forget to restart Caddy after editing the config file:
+
+```shell
+systemctl restart caddy
+```
+
+After restart it should automatically obtain TLS certificate and serve the application. If not check the logs via `journalctl -u caddy`.
 
 ## Database
 
