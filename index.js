@@ -50,7 +50,11 @@ app.get('/', async (req, res) => {
 });
 
 app.post('/', async (req, res) => {
-    const { name, message } = req.body;
+    const { name, email, message } = req.body;
+    if (email.length > 0) {
+        return res.redirect('/');
+    }
+
     await sql`insert into messages (name, message, timestamp) values (${name}, ${message}, now())`;
     res.flash('success', 'Your message has been posted!');
     res.redirect('/');
