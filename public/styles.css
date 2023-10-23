@@ -1,18 +1,27 @@
+body, html {
+    margin: 0;
+    min-height: 100%;
+}
+
 body {
-    background-color: #000;
+    background: linear-gradient(to bottom, #000, #2b0d42);
     color: #0f0;
-    font-family: 'Courier New', monospace;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .container {
-    width: 800px;
-    margin: 0 auto;
+    width: 700px;
+    margin: 30px auto;
     padding: 20px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(255, 0, 150, 0.5);
 }
 
 h1 {
     text-align: center;
-    color: #f00;
+    color: #ff00cc;
+    text-shadow: 0 0 10px #ff00cc;
 }
 
 form, ul {
@@ -27,16 +36,50 @@ input[type="text"], textarea {
     border: 1px solid #0f0;
     background-color: #000;
     color: #0f0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #0f0;
 }
 
 input[type="submit"] {
     padding: 10px 20px;
     border: none;
-    background-color: #f00;
+    background-color: #ff00cc;
     color: #fff;
     cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ff00cc;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff3399;
 }
 
 li {
     margin-bottom: 10px;
+    text-shadow: 0 0 5px #0f0;
+}
+
+p {
+    text-shadow: 0 0 5px #0f0;
+}
+
+.author {
+    font-size: 17px;
+}
+.date {
+    font-size: 11px;
+    color: #090;
+}
+.message {
+    margin: 10px 0 30px 0;
+    color: #0c0;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff00cc, #ff9933);
+    margin: 20px 0;
+    opacity: 0.5;
 }

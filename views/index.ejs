@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guestbook</title>
     <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -31,10 +32,12 @@
 
 
         <% messages.forEach(message => { %>
-        <p>
-            <strong><%= message.name %></strong> <small>(<%= message.timestamp %>)</small><br />
+        <div class="author"><%= message.name %></div>
+        <div class="date"><%= message.timestamp %></div>
+        <div class="message">
             <%= message.message %>
-        </p>
+        </div>
+        <hr/>
         <% }); %>
 
         <script type="text/javascript">
