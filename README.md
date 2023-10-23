@@ -77,17 +77,20 @@ __Note:__ Don't forget to create `.env` file with database credentials.
 
 For process management we will use PM2 (https://pm2.keymetrics.io/docs/usage/quick-start/).
 
-Generate startup script:
+To make application persistent we need to:
 
 ```shell
-pm2 startup
+# Generate startup script
+npm run pm2:init
+
+# Start the application
+npm run pm2:start
+
+# Save the process list
+npm run pm2:save
 ```
 
-Start the application:
-
-```shell
-npm run start:prod
-```
+More information: https://pm2.keymetrics.io/docs/usage/startup/
 
 ## Database
 

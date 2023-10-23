@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "start:prod": "pm2 start index.js --name guestbook-app",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "pm2:init": "pm2 startup",
+    "pm2:start": "pm2 start index.js",
+    "pm2:save": "pm2 save",
+    "pm2:clean": "pm2 unstartup systemd"
   },
   "keywords": [],
   "author": "",
