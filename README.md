@@ -2,6 +2,8 @@
 
 Simple retro guestbook app.
 
+![Screenshot](screenshot.png)
+
 ## Development
 
 ```shell
@@ -10,26 +12,29 @@ npm run dev
 
 ## Caddy configuration
 
+https://caddyserver.com/
+
+### Install
+
+```
+curl https://getcaddy.com | bash -s personal
+```
+
+### Configure
+
 ```caddy
 example.com {
     tls email@example.com
-
-    route /webhook* {
-        basicauth {
-            username MySecurePassword
-        }
-
-        respond "Webhook received!"
-        exec /path/to/your-script.sh
-    }
 
     reverse_proxy localhost:3000
 }
 ```
 
-## Database tables
+## Database
 
 ### postgres
+
+Create new database at https://neon.tech/.
 
 ```sql
 CREATE TABLE messages (
